@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_node.c                                        :+:      :+:    :+:   */
+/*   print_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/15 10:38:58 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/19 10:14:51 by psprawka         ###   ########.fr       */
+/*   Created: 2018/06/21 04:24:22 by psprawka          #+#    #+#             */
+/*   Updated: 2018/06/21 04:27:31 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_node		*ft_init_node(void *data, size_t dsize)
+void	print_list(t_list *list)
 {
-	t_node	*new;
+	int		i;
+	t_list	*tmp;
 
-	if (!(new = ft_memalloc(sizeof(t_node))))
-		return (NULL);
-	new->data = data;
-	new->d_size = dsize;
-	new->next = NULL;
-	return (new);
+	i = 1;
+	tmp = list;
+	printf("%s\nLIST:\n", YELLOW);
+	while (tmp)
+	{
+		printf("%d. p:[%p], k:[%d]\n", i++, tmp, tmp->key);
+		tmp = tmp->next;
+	}
+	printf("%s\n", NORMAL);
 }

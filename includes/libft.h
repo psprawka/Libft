@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 18:35:16 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/17 14:29:39 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/06/21 04:31:44 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdbool.h>
+# include <stdio.h>
 
 # define NORMAL			"\x1B[0m"
 # define RED			"\x1B[31m"
@@ -54,6 +55,11 @@ typedef struct	s_queue
 
 }				t_queue;
 
+typedef struct	s_list
+{
+	int				key;
+	struct s_list	*next;
+}				t_list;
 
 /*
 **	io/
@@ -63,6 +69,15 @@ void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(long long nb, int fd);
 void			ft_putstr_fd(char *s, int fd);
 int				gnl(int fd, char **line);
+
+/*
+**	list/
+*/
+int				add_list(t_list **list, int key);
+t_list			*create_list(int key);
+void			free_list(t_list **list);
+void			print_list(t_list *list);
+void			remove_list(t_list **list, int key);
 
 /*
 **	memory/
@@ -90,6 +105,7 @@ void			ft_putnbr(int nb);
 /*
 **	queue/
 */
+void			ft_free_queue(t_queue *queue, void (*fct_free)(void *));
 t_node			*ft_init_node(void *data, size_t dsize);
 t_queue			*ft_init_queue(void);
 t_node			*ft_pop_queue(t_queue **queue);
@@ -133,7 +149,7 @@ int				ft_is_sort(int *array, int length, int (*f)(int, int));
 void			ft_sort_wordtab(char **array);
 
 /*
-**	printf dir:
+**	ft_printf/
 */
 int				ft_printf(const char *format, ...);
 

@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_node.c                                        :+:      :+:    :+:   */
+/*   remove_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/15 10:38:58 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/19 10:14:51 by psprawka         ###   ########.fr       */
+/*   Created: 2018/06/21 03:35:15 by psprawka          #+#    #+#             */
+/*   Updated: 2018/06/21 04:27:38 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_node		*ft_init_node(void *data, size_t dsize)
+void	remove_list(t_list **list, int key)
 {
-	t_node	*new;
+	t_list	*tmp;
+	t_list	*prev;
 
-	if (!(new = ft_memalloc(sizeof(t_node))))
-		return (NULL);
-	new->data = data;
-	new->d_size = dsize;
-	new->next = NULL;
-	return (new);
+	tmp = *list;
+	prev = NULL;
+
+	while (tmp)
+	{
+		if (tmp->key == key)
+		{
+			if (prev == NULL)
+				*list = tmp->next;
+			else
+			{
+				prev->next = tmp->next;
+				free(tmp);
+			}
+			return ;
+		}
+		prev = tmp;
+		tmp = tmp->next;
+	}
 }

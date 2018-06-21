@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_node.c                                        :+:      :+:    :+:   */
+/*   add_list.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/15 10:38:58 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/19 10:14:51 by psprawka         ###   ########.fr       */
+/*   Created: 2018/06/21 03:35:23 by psprawka          #+#    #+#             */
+/*   Updated: 2018/06/21 04:27:18 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_node		*ft_init_node(void *data, size_t dsize)
+int		add_list(t_list **list, int key)
 {
-	t_node	*new;
+	t_list *tmp;
 
-	if (!(new = ft_memalloc(sizeof(t_node))))
-		return (NULL);
-	new->data = data;
-	new->d_size = dsize;
-	new->next = NULL;
-	return (new);
+	tmp = *list;
+	if (!tmp)
+	{
+		*list = create_list(key);
+		return (EXIT_SUCCESS);
+	}
+	while (tmp->next)
+		tmp = tmp->next;
+
+	tmp->next = create_list(key);
+	return (EXIT_SUCCESS);
 }
+
+

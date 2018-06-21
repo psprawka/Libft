@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_node.c                                        :+:      :+:    :+:   */
+/*   free_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/15 10:38:58 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/19 10:14:51 by psprawka         ###   ########.fr       */
+/*   Created: 2018/06/21 03:35:33 by psprawka          #+#    #+#             */
+/*   Updated: 2018/06/21 04:27:26 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_node		*ft_init_node(void *data, size_t dsize)
+void	free_list(t_list **list)
 {
-	t_node	*new;
+	t_list *tmp;
 
-	if (!(new = ft_memalloc(sizeof(t_node))))
-		return (NULL);
-	new->data = data;
-	new->d_size = dsize;
-	new->next = NULL;
-	return (new);
+	tmp = *list;
+	while (tmp)
+	{
+
+		printf("free: p:[%p], k:[%d]\n", tmp, tmp->key);
+		tmp = tmp->next;
+		free(*list);
+		*list = tmp; 
+	}
 }
