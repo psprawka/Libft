@@ -6,12 +6,11 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:54:03 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/16 15:18:37 by tle-huu-         ###   ########.fr       */
+/*   Updated: 2018/06/21 08:34:58 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 void		ft_push_pqueue(t_queue **head, t_node *new, int (*fct)(t_node *, t_node *))
 {

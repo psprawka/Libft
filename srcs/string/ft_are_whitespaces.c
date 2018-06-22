@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_list.c                                         :+:      :+:    :+:   */
+/*   ft_are_whitespaces.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/21 03:35:23 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/21 09:36:34 by psprawka         ###   ########.fr       */
+/*   Created: 2018/06/22 10:42:20 by psprawka          #+#    #+#             */
+/*   Updated: 2018/06/22 10:46:37 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_add_list(t_node **list, void *data)
+int		ft_are_whitespaces(char *str)
 {
-	t_node *tmp;
+	int i;
 
-	tmp = *list;
-	if (!tmp)
+	i = 0;
+	while (str[i])
 	{
-		*list = ft_init_node(data, sizeof(data));
-		return (EXIT_SUCCESS);
+		if (IS_WHITE(str[i]))
+			return (1);
+		i++;
 	}
-	while (tmp->next)
-		tmp = tmp->next;
-
-	tmp->next = ft_init_node(data, sizeof(data));
-	return (EXIT_SUCCESS);
+	return (0);
 }
-
-

@@ -6,23 +6,23 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/21 03:35:33 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/21 04:27:26 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/06/21 09:36:18 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_list(t_list **list)
+void	ft_free_list(t_node **list, void (*fct_free)(void *))
 {
-	t_list *tmp;
+	t_node *tmp;
 
 	tmp = *list;
 	while (tmp)
 	{
-
-		printf("free: p:[%p], k:[%d]\n", tmp, tmp->key);
 		tmp = tmp->next;
-		free(*list);
+		if (fct_free)
+			fct_free(tmp->data);
+		free(tmp);
 		*list = tmp; 
 	}
 }
