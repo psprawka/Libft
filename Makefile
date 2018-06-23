@@ -6,7 +6,7 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/24 11:51:37 by psprawka          #+#    #+#              #
-#    Updated: 2018/06/22 10:45:35 by psprawka         ###   ########.fr        #
+#    Updated: 2018/06/23 02:53:07 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,16 +89,16 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(TOOLS)ft_set_max_fd.c
 
 
-SRC_PRINTF = $(PRINTF)atoi_and_ulltoa.c \
-		$(PRINTF)ft_printf.c \
-		$(PRINTF)print.c \
-		$(PRINTF)conversion.c \
-		$(PRINTF)gather_flags.c \
-		$(PRINTF)str_chr.c \
-		$(PRINTF)ptr_dbl.c \
-		$(PRINTF)int_uint.c \
-		$(PRINTF)indirect_ft.c \
-		$(PRINTF)ft_libftprintf.c
+SRC_PRINTF = $(SRC_DIR)$(IO)$(PRINTF)atoi_and_ulltoa.c \
+		$(SRC_DIR)$(IO)$(PRINTF)ft_printf.c \
+		$(SRC_DIR)$(IO)$(PRINTF)print.c \
+		$(SRC_DIR)$(IO)$(PRINTF)conversion.c \
+		$(SRC_DIR)$(IO)$(PRINTF)gather_flags.c \
+		$(SRC_DIR)$(IO)$(PRINTF)str_chr.c \
+		$(SRC_DIR)$(IO)$(PRINTF)ptr_dbl.c \
+		$(SRC_DIR)$(IO)$(PRINTF)int_uint.c \
+		$(SRC_DIR)$(IO)$(PRINTF)indirect_ft.c \
+		$(SRC_DIR)$(IO)$(PRINTF)ft_libftprintf.c
 
 OBJ += $(SRC:.c=.o)
 OBJ += $(SRC_PRINTF:.c=.o)
