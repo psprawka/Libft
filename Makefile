@@ -6,7 +6,7 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/24 11:51:37 by psprawka          #+#    #+#              #
-#    Updated: 2018/06/23 02:53:07 by psprawka         ###   ########.fr        #
+#    Updated: 2018/06/23 03:07:02 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,17 +15,18 @@ NAME = libft.a
 FLAGS += -g -Wall -Wextra -Werror
 #FLAGS +=  -fsanitize=address
 
-SRC_DIR = srcs/
-LIST	= list/
-QUEUE	= queue/
-NUMERIC	= numeric/
-STRING	= string/
-MEMORY	= memory/
-IO		= io/
-TOOLS	= tools/
-PRINTF	= ft_printf/srcs/
+SRC_DIR 	= srcs/
+LIST		= list/
+DATA_STUCTS	= data_structures/
+QUEUE		= queue/
+NUMERIC		= numeric/
+STRING		= string/
+MEMORY		= memory/
+IO			= io/
+TOOLS		= tools/
+PRINTF		= ft_printf/srcs/
 
-HEADERS = ./includes
+HEADERS 	= ./includes
 
 
 SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
@@ -33,9 +34,6 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(IO)ft_putnbr_fd.c \
 		$(SRC_DIR)$(IO)ft_putstr_fd.c \
 		$(SRC_DIR)$(IO)gnl.c \
-		$(SRC_DIR)$(LIST)add_list.c \
-		$(SRC_DIR)$(LIST)free_list.c \
-		$(SRC_DIR)$(LIST)remove_list.c \
 		$(SRC_DIR)$(MEMORY)ft_bzero.c \
 		$(SRC_DIR)$(MEMORY)ft_memalloc.c \
 		$(SRC_DIR)$(MEMORY)ft_memchr.c \
@@ -75,18 +73,21 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(STRING)ft_strsub.c \
 		$(SRC_DIR)$(STRING)ft_wstrlen.c \
 		$(SRC_DIR)$(STRING)ft_strtrim.c \
-		$(SRC_DIR)$(QUEUE)free_queue.c \
-		$(SRC_DIR)$(QUEUE)init_node.c \
-		$(SRC_DIR)$(QUEUE)init_queue.c \
-		$(SRC_DIR)$(QUEUE)push_queue.c \
-		$(SRC_DIR)$(QUEUE)push_pqueue.c \
-		$(SRC_DIR)$(QUEUE)pop_queue.c \
-		$(SRC_DIR)$(QUEUE)remove_node.c \
-		$(SRC_DIR)$(QUEUE)top_queue.c \
 		$(SRC_DIR)$(TOOLS)ft_count_words.c \
 		$(SRC_DIR)$(TOOLS)ft_is_sort.c \
 		$(SRC_DIR)$(TOOLS)ft_sort_wordtab.c \
-		$(SRC_DIR)$(TOOLS)ft_set_max_fd.c
+		$(SRC_DIR)$(TOOLS)ft_set_max_fd.c \
+		$(SRC_DIR)$(DATA_STUCTS)init_node.c \
+		$(SRC_DIR)$(DATA_STUCTS)remove_node.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(LIST)add_list.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(LIST)free_list.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(LIST)remove_list.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)free_queue.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)init_queue.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)push_queue.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)push_pqueue.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)pop_queue.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)top_queue.c
 
 
 SRC_PRINTF = $(SRC_DIR)$(IO)$(PRINTF)atoi_and_ulltoa.c \

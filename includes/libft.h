@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 18:35:16 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/22 11:21:08 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/06/23 03:17:48 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,31 @@ void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(long long nb, int fd);
 void			ft_putstr_fd(char *s, int fd);
 int				gnl(int fd, char **line);
+int				ft_printf(const char *format, ...);
 
 /*
-**	list/
+**	data_structures/
+*/
+t_node			*ft_init_node(void *data, size_t dsize);
+void			remove_node(t_queue **queue, t_node *prev, t_node *remove);
+
+/*
+**	data_structures/list/
 */
 int				ft_add_list(t_node **list, void *data);
 void			ft_free_list(t_node **list, void (*fct_free)(void *));
 void			ft_print_list(t_node *list);
 void			ft_remove_list(t_node **list, void *data);
+
+/*
+**	data_structures/queue/
+*/
+void			ft_free_queue(t_queue *queue, void (*fct_free)(void *));
+t_queue			*ft_init_queue(void);
+t_node			*ft_pop_queue(t_queue **queue);
+void			ft_push_queue(t_queue **head, t_node *new);
+void			ft_push_pqueue(t_queue **head, t_node *new, int (*fct)(t_node *, t_node *));
+void			*ft_top_queue(t_queue *queue);
 
 /*
 **	memory/
@@ -106,18 +123,6 @@ char			*ft_convert_uni(wchar_t wide);
 char			*ft_ftoa(double n);
 char			*ft_itoa(int nbr);
 void			ft_putnbr(int nb);
-
-/*
-**	queue/
-*/
-void			ft_free_queue(t_queue *queue, void (*fct_free)(void *));
-t_node			*ft_init_node(void *data, size_t dsize);
-t_queue			*ft_init_queue(void);
-t_node			*ft_pop_queue(t_queue **queue);
-void			ft_push_queue(t_queue **head, t_node *new);
-void			ft_push_pqueue(t_queue **head, t_node *new, int (*fct)(t_node *, t_node *));
-void			*ft_top_queue(t_queue *queue);
-void			remove_node(t_queue **queue, t_node *prev, t_node *remove);
 
 /*
 **	string/
@@ -155,10 +160,6 @@ int				ft_is_sort(int *array, int length, int (*f)(int, int));
 void			ft_sort_wordtab(char **array);
 void			ft_set_max_fd(int *maxfd, int newfd);
 
-/*
-**	ft_printf/
-*/
-int				ft_printf(const char *format, ...);
 
 //	to fix:
 //	-> all numeric
@@ -167,5 +168,6 @@ int				ft_printf(const char *format, ...);
 //	-> string/strnstr
 //	-> string/strtrim
 //	-> tools/either of them
+//	-> fix printf becuase it frees static (ft_itoa)
 
 #endif
