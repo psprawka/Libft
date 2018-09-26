@@ -6,7 +6,7 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/24 11:51:37 by psprawka          #+#    #+#              #
-#    Updated: 2018/06/23 03:07:02 by psprawka         ###   ########.fr        #
+#    Updated: 2018/09/26 09:04:16 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ FLAGS += -g -Wall -Wextra -Werror
 #FLAGS +=  -fsanitize=address
 
 SRC_DIR 	= srcs/
+HT			= hash_table/
 LIST		= list/
 DATA_STUCTS	= data_structures/
 QUEUE		= queue/
@@ -79,6 +80,13 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(TOOLS)ft_set_max_fd.c \
 		$(SRC_DIR)$(DATA_STUCTS)init_node.c \
 		$(SRC_DIR)$(DATA_STUCTS)remove_node.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(HT)free_hashtable.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(HT)hash_hashtable.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(HT)init_hashtable.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(HT)insert_hashtable.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(HT)print_hashtable.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(HT)remove_hashtable.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(HT)search_hashtable.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(LIST)add_list.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(LIST)free_list.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(LIST)remove_list.c \

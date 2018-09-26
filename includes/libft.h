@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 18:35:16 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/23 03:17:48 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/09/26 09:08:21 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,54 +18,11 @@
 # include <stdbool.h>
 # include <stdio.h>
 
-# define NORMAL			"\x1B[0m"
-# define RED			"\x1B[31m"
-# define GREEN			"\x1B[32m"
-# define YELLOW			"\x1B[33m"
-# define BLUE			"\x1B[34m"
-# define MAGNETA		"\x1B[35m"
-# define CYAN			"\x1B[36m"
-# define WHITE			"\x1B[37m"
-# define PINK			"\033[38;5;200m"
-# define ORANGE			"\033[38;5;208m"
-# define PURPLE			"\033[38;5;55m"
-# define MAROON			"\033[38;5;88m"
-# define GREY			"\033[38;5;246m"
+# include "libft_define.h"
+# include "libft_struct.h"
 
-# define BOLD			"\033[1m"
-# define WHATISIT		"\033[2m"
-# define ITALIC			"\033[3m"
-# define UNDERLINE 		"\033[4m"
-# define CROSSED 		"\033[9m"
-# define NO_BOLD		"\033[21m"
-# define NO_ITALIC		"\033[23m"
-# define NO_UNDERLINE 	"\033[24m"
-# define NO_CROSSED 	"\033[29m"
 
-# define IS_ALNUM(c)		(c > 47 && c < 58) || (c > 64 && c < 91) || (c > 96 && c < 123) ? 1 : 0;
-# define IS_ALPHA(c)		(c > 64 && c < 91) || (c > 96 && c < 123) ? 1 : 0;
-# define IS_ASCII(c)		(c >= 0 && c < 128) ? 1 : 0;
-# define IS_DIGIT(c)		(c > 47 && c < 58) ? 1 : 0;
-# define IS_PRINTABLE(c)	(c > 31 && c < 127) ? 1 : 0;
-# define IS_WHITE(c)		(c == '\t' || c == ' ' || c == '\v') ? 1 : 0
-
-# define TO_UPPER(c)		(c > 96 && c < 123) ? c - 32 : c;
-# define TO_LOWER(c)		(c > 64 && c < 91) ? c + 32 : c;
-
-typedef struct	s_node
-{
-	void			*data;
-	size_t			d_size;
-	struct s_node	*next;
-
-}				t_node;
-
-typedef struct	s_queue
-{
-	t_node		*first;
-	t_node		*last;
-
-}				t_queue;
+static t_ht_item HASH_DELETED_ITEM = {NULL, NULL}; 
 
 /*
 **	io/
@@ -82,6 +39,19 @@ int				ft_printf(const char *format, ...);
 */
 t_node			*ft_init_node(void *data, size_t dsize);
 void			remove_node(t_queue **queue, t_node *prev, t_node *remove);
+
+/*
+**	data_structures/hash_table/
+*/
+void			ft_free_item_ht(t_ht_item *item);
+void			ft_free_table_ht(t_ht_table *table);
+int				ft_hash_ht(void *value, int size, int colision);
+t_ht_item		*ft_init_item_ht(void *key, void *value);
+t_ht_table		*ft_init_table_ht(int size);
+int				ft_insert_ht(t_ht_table *table, t_ht_item *item, int (*fcmp)(void *, void *));
+void			ft_print_ht(t_ht_table *table);
+int				ft_remove_ht(t_ht_table *table, void *key, int (*fcmp)(void *, void *));
+void			*ft_search_ht(t_ht_table *table, void *key, int (*fcmp)(void *, void *));
 
 /*
 **	data_structures/list/
@@ -168,6 +138,8 @@ void			ft_set_max_fd(int *maxfd, int newfd);
 //	-> string/strnstr
 //	-> string/strtrim
 //	-> tools/either of them
+//	-> data_structures/red_black_tree/* 
+//	-> data_structures/hash_table add resizing function
 //	-> fix printf becuase it frees static (ft_itoa)
 
 #endif
