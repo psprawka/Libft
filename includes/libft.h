@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 18:35:16 by psprawka          #+#    #+#             */
-/*   Updated: 2018/10/01 14:39:18 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/10/01 15:20:26 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void			*ft_search_ht(t_ht_table *table, void *key, int (*fcmp)(void *, void *));
 /*
 **	data_structures/list/
 */
-int				ft_add_back_list(t_node **list, void *data);
-int				ft_add_front_list(t_node **list, void *data);
+int				ft_add_back_list(t_node **list, t_node *node);
+int				ft_add_front_list(t_node **list, t_node *node);
 void			ft_free_list(t_node **list, void (*fct_free)(void *));
 void			ft_print_list(t_node *list);
 void			ft_remove_list(t_node **list, void *data);
