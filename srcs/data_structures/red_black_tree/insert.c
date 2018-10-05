@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/04 15:50:44 by psprawka          #+#    #+#             */
-/*   Updated: 2018/09/04 22:34:37 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/10/04 21:15:34 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,16 +161,14 @@ void	rotate_right(t_rbtree *tag)
 
 //----------------------------------- TOOLS -------------------------------------
 
-t_rbtree	*find_position(t_rbtree *root, int size)
+t_rbtree	*find_position(t_rbtree *root, t_rbtree *new, int (*fct)(void *, void *))
 {
 	t_rbtree	*tptr;
-	t_rbdata	*tdata;
 	
 	tptr = root;
 	while (tptr)
 	{
-		tdata = (t_rbdata *)tptr->data;
-		if (tdata->size > size)
+		if (fct(tptr->data, new->data))
 		{
 			if (!tptr->left)
 				return (tptr);
@@ -228,9 +226,9 @@ void insert_case2(t_rbtree *new)
 void insert_case3(t_rbtree *new)
 {
 	NPARENT->color = RBBLACK;
-	if (new == NGRANDPA->left)
+	if (new->parent == NGRANDPA->left && NUNCLE_RIGHT)
 		NUNCLE_RIGHT->color = RBBLACK;
-	else 
+	else if (new->parent == NGRANDPA->right && NUNCLE_LEFT)
 		NUNCLE_LEFT->color = RBBLACK;
 	NGRANDPA->color = RBRED;
 	insert_repair_tree(NGRANDPA);
@@ -241,32 +239,22 @@ void insert_case4(t_rbtree *new)
 	t_rbtree *p = NPARENT;
 	t_rbtree *g = NGRANDPA;
 
-	if (new == g->left->right)
+	if (g && new == g->left->right)
 	{
 		rotate_left(p);
 		new = new->left;
 	}
-	else if (new == g->right->left)
+	else if (g && new == g->right->left)
 	{
 		rotate_right(p);
 		new = new->right; 
 	}
-	insert_case4step2(new);
-}
-
-void insert_case4step2(t_rbtree *new)
-{
-	t_rbtree *p = NPARENT;
-	t_rbtree *g = NGRANDPA;
-
-	if (new == p->left)
-		rotate_right(g);
-	else
-		rotate_left(g);
+	
+	new == p->left ? rotate_right(g) : rotate_left(g);
 	p->color = RBBLACK;
-	g->color = RBRED;
+	if (g)
+		g->color = RBRED;
 }
-
 
 void	insert_repair_tree(t_rbtree *new)
 {
@@ -274,80 +262,12 @@ void	insert_repair_tree(t_rbtree *new)
 		insert_case1(new);
 	else if (NPARENT->color == RBBLACK)
 		insert_case2(new);
-	else if (NGRANDPA && ((NUNCLE_LEFT != NPARENT && NUNCLE_LEFT && NUNCLE_LEFT->color & RBRED)
+	else if (NGRANDPA && ((NUNCLE_LEFT && NUNCLE_LEFT != NPARENT && NUNCLE_LEFT->color & RBRED)
 			|| (NUNCLE_RIGHT && NUNCLE_RIGHT != NPARENT && NUNCLE_RIGHT->color & RBRED)))
 		insert_case3(new);
 	else
 		insert_case4(new);
 }
-
-// (GRANDPA && (PARENT->color & RBRED) && ((UNCLE_LEFT != PARENT &&
-// 			UNCLE_LEFT && UNCLE_LEFT->color & RBRED) || (UNCLE_RIGHT &&
-// 			UNCLE_RIGHT != PARENT && UNCLE_RIGHT->color & RBRED)))
-// void	insertion_case4(t_rbtree *root)
-// {
-// 	printf("INSERTION CASE 4 root: %p\n", root);
-// 	if (GRANDPA->right && GRANDPA->right->left == root)
-// 	{
-// 		printf("case 1 beg\n");
-// 		rotate_right(PARENT);
-// 		root = root->right;
-// 		printf("case 1 end\n");
-// 	}
-// 	else if (GRANDPA->left && GRANDPA->left->right == root)
-// 	{
-// 		printf("case 2 beg\n");
-// 		rotate_left(PARENT);
-// 		root = root->left;
-// 		printf("case 2 end\n");
-// 	}
-// 	printf("IM HERE\n");
-// 	root == PARENT->left ? rotate_right(GRANDPA) : rotate_left(GRANDPA);
-// 	PARENT->color = RBBLACK;
-// 	printf("IM HERE2\n");
-// 	if (!PARENT->parent)
-// 		root = PARENT;
-// 	printf("IM HERE3\n");
-// 	if (PARENT && PARENT->left != root)
-// 	{
-// 		printf("ONE\n");
-// 		PARENT->left->color = RBRED;
-// 		printf("ONE END");
-// 	}
-// 	else if (PARENT)
-// 	{
-// 		printf("TWO\n");
-// 		PARENT->right->color = RBRED;
-// 		printf("TWO END");
-// 	}
-// }
-
-// void	valid_insertion(t_rbtree *root)
-// {
-// 	// printf("ENTERED INSERTION: ROOT %p %hd\n", root, ((t_rbdata *)root->data)->size);
-// 	if (!PARENT)
-// 	{
-// 		root->color = RBBLACK;
-// 		// printf("case 1\n");
-// 	}
-// 	else if (GRANDPA && (PARENT->color & RBRED) && ((UNCLE_LEFT != PARENT &&
-// 			UNCLE_LEFT && UNCLE_LEFT->color & RBRED) || (UNCLE_RIGHT &&
-// 			UNCLE_RIGHT != PARENT && UNCLE_RIGHT->color & RBRED)))
-// 	{
-// 		// printf("SECOND CASE\n");
-// 		if (UNCLE_RIGHT)
-// 			UNCLE_RIGHT->color = RBBLACK;
-// 		if (UNCLE_LEFT)
-// 			UNCLE_LEFT->color = RBBLACK;
-// 		GRANDPA->color = RBRED;
-// 		valid_insertion(GRANDPA);
-// 	}
-// 	else if (GRANDPA && (PARENT->color & RBRED))
-// 	{
-// 		// printf("CASE 4 before entering\n");
-// 		insertion_case4(root);
-// 	}
-// }
 
 /*	Insertion:
 **	Inseriton is responsible for adding a node to a tree, then validate it based
@@ -355,48 +275,53 @@ void	insert_repair_tree(t_rbtree *new)
 **	postion to be assigned, thus parent node and add son. Validate insertion.
 */
 
-t_rbtree	*insert_rbtree(t_rbtree *root, t_rbtree *to_insert)
+void	insert_rbtree(t_rbtree **root, t_rbtree *to_insert, int (*fct)(void *, void *))
 {
 	t_rbtree	*tptr;
 	t_rbtree	*parent;
-	t_rbdata	*tidata;
-	t_rbdata	*pdata;
 	
-	tptr = root;
-	if (tptr == NULL)
-		root = to_insert;
+	if (!root || !(*root))
+		*root = to_insert;
 	else
 	{
-		tidata = (t_rbdata *)to_insert->data;
-		parent = find_position(root, tidata->size);
-		pdata = (t_rbdata *)parent->data;
-		
-		if (pdata->size > tidata->size)
+		tptr = *root;
+		parent = find_position(*root, to_insert, fct);
+		if (fct(parent->data, to_insert->data))
 			parent->left = to_insert;
 		else
 			parent->right = to_insert;
 		to_insert->parent = parent;
 	}
-
-	root = to_insert;
-	while (to_insert->parent)
-  		root = root->parent;
- 	return root;
-
+	
+	///////////////////////////////////////////////////
 	// printf("INSERTED\n");
 	// printf("\n\n\n");
+	// print2D(root);
+	// // printf("\n\n\n");
+	// printf("COLOR: [%d]\n",  to_insert->color);
+	//////////////////////////////////////////////////
 	
-	print2D(root);
-	// printf("\n\n\n");
-	printf("COLOR: [%d]\n",  to_insert->color);
 	insert_repair_tree(to_insert);
 }
 
 
 
 
+int		cmp(void *n1, void *n2)
+{
+	t_rbdata	*n1data;
+	t_rbdata	*n2data;
 
-int main(int ac, char **av)
+	n1data = ((t_rbtree *)n1)->data;
+	n2data = ((t_rbtree *)n2)->data;
+
+	if (n1data->size > n2data->size)
+		return (1);
+	return (0);
+}
+
+
+int		main(int ac, char **av)
 {
 	int i = 1;
 	t_rbtree	*root = NULL;
@@ -405,9 +330,10 @@ int main(int ac, char **av)
 	while (i < ac)
 	{
 		to_insert = create_rbtree(atoi(av[i]));
-		// printf("Created %s\n", av[i]);
+		printf("Created %s\n", av[i]);
 		i++;
-		root = insert_rbtree(root, to_insert);
+		insert_rbtree(&root, to_insert, &cmp);
+		printf("Inserted %s\n", av[i]);
 	}
 	
 	print2D(root);
