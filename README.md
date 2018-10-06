@@ -3,8 +3,12 @@ My very own 42 library of basic C functions :smile:
 
 ### Ft_libft is made up of:
 * [data strucutres:](https://github.com/psprawka/Libft/tree/master/srcs/data_structures)
-* 	[queues management,](https://github.com/psprawka/Libft/tree/master/srcs/data_structures/queue)
-* 	[linked-list management.](https://github.com/psprawka/Libft/tree/master/srcs/data_structures/list)
+  * [queues management,](https://github.com/psprawka/Libft/tree/master/srcs/data_structures/queue)
+  * [linked-list management,](https://github.com/psprawka/Libft/tree/master/srcs/data_structures/list)
+  * [red-black-trees management.](https://github.com/psprawka/Libft/tree/master/srcs/data_structures/red_black_tree)
+* [algorithms:](https://github.com/psprawka/Libft/tree/master/srcs/data_structures)
+  * [sorting algorithms.](https://github.com/psprawka/Libft/tree/master/srcs/algorithms/sorting_algoritms)
+  * [path-finding algorithms.](https://github.com/psprawka/Libft/tree/master/srcs/algorithms/path-finding_algorithms)
 * [memory manipulation,](https://github.com/psprawka/Libft/tree/master/srcs/memory)
 * [string manipulation,](https://github.com/psprawka/Libft/tree/master/srcs/string)
 * [numeric functions,](https://github.com/psprawka/Libft/tree/master/srcs/numeric)
