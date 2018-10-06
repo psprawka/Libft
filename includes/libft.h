@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 18:35:16 by psprawka          #+#    #+#             */
-/*   Updated: 2018/10/01 15:20:26 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/10/05 18:28:26 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 # include "libft_define.h"
 # include "libft_struct.h"
+# include "libft_rbtree.h"
 
 
 static t_ht_item HASH_DELETED_ITEM = {NULL, NULL}; 
