@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/05 17:41:37 by psprawka          #+#    #+#             */
-/*   Updated: 2018/10/05 18:31:21 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/10/06 13:25:50 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,17 @@
 #include "libft_rbtree.h"
 
 /*
-**	------------------------ Insertion repair cases ---------------------------
+**	Description of functions insert_repair_case*() and ft_insert_repair_tree()
+**	avaliable here: https://en.wikipedia.org/wiki/Red%E2%80%93black_tree
+**	However in function ft_insert_repair_tree() I examine only three cases:
+**		-> 1. Current node is a root of red back tree.
+**		-> 3. Parent is red and uncle is red.
+**		-> 4. Parent is red and uncle is black.
+**	I skip case 2 (Parent is black) because in this case nothing happens - its
+**	goal was to prevent stepping into next if statement (if ... else if). Since
+**	my if statement is more detailed than on website above, i don't need it.
 */
+
 static void	insert_repair_case1(t_rbtree *node)
 {
 	if (!NPARENT)

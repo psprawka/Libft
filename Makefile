@@ -6,14 +6,14 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/24 11:51:37 by psprawka          #+#    #+#              #
-#    Updated: 2018/10/05 18:32:51 by psprawka         ###   ########.fr        #
+#    Updated: 2018/10/06 18:25:57 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 NAME = libft.a
 FLAGS += -g -Wall -Wextra -Werror
-FLAGS +=  -fsanitize=address
+# FLAGS +=  -fsanitize=address
 
 SRC_DIR 	= srcs/
 DATA_STUCTS	= data_structures/
@@ -60,11 +60,11 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(STRING)ft_strchr.c \
 		$(SRC_DIR)$(STRING)ft_strcmp.c \
 		$(SRC_DIR)$(STRING)ft_strcpy.c \
-		$(SRC_DIR)$(STRING)ft_strdup_chr.c \
 		$(SRC_DIR)$(STRING)ft_strdup.c \
+		$(SRC_DIR)$(STRING)ft_strdup_chr.c \
 		$(SRC_DIR)$(STRING)ft_strjoin.c \
-		$(SRC_DIR)$(STRING)ft_strlen_chr.c \
 		$(SRC_DIR)$(STRING)ft_strlen.c \
+		$(SRC_DIR)$(STRING)ft_strlen_chr.c \
 		$(SRC_DIR)$(STRING)ft_strncat.c \
 		$(SRC_DIR)$(STRING)ft_strncmp.c \
 		$(SRC_DIR)$(STRING)ft_strncpy.c \
@@ -93,6 +93,8 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(DATA_STUCTS)$(LIST)remove_list.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(RBT)create_rbtree.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(RBT)delete_rbtree.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(RBT)delete_repair_rbtree.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(RBT)get_family_rbtree.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(RBT)insert_rbtree.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(RBT)insert_repair_rbtree.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(RBT)rotations_rbtree.c \
