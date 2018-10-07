@@ -6,7 +6,7 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/24 11:51:37 by psprawka          #+#    #+#              #
-#    Updated: 2018/10/06 18:25:57 by psprawka         ###   ########.fr        #
+#    Updated: 2018/10/07 12:13:30 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,6 +97,7 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(DATA_STUCTS)$(RBT)get_family_rbtree.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(RBT)insert_rbtree.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(RBT)insert_repair_rbtree.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(RBT)print_rbtree.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(RBT)rotations_rbtree.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(RBT)search_rbtree.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)free_queue.c \

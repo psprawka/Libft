@@ -6,17 +6,19 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/04 15:50:52 by psprawka          #+#    #+#             */
-/*   Updated: 2018/10/06 21:58:14 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/10/07 13:50:14 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libft_rbtree.h"
+
 typedef struct	s_rbdata
 {
 	int		size;
 	// int8_t	if_free;
 }				t_rbdata;
+
 static void	delete_case1_2(t_rbtree *to_delete, t_rbtree *replace)
 {
 	printf("DELETE CASE1_2\n");
@@ -42,12 +44,12 @@ static void	delete_case3(t_rbtree *to_delete, t_rbtree *successor)
 	successor->left = to_delete->left;
 	successor->left->parent = successor;
 
-	if (successor->color & RBBLACK && successor->right)
+	if (successor->right)
 	{
 		if (successor->right->color & RBBLACK)
 			successor->right->color |= DB_RBBLACK; //successor->right->color = DB_RBBLACK;
 		else
-			successor->right->color |= RBBLACK;
+			successor->right->color = RBBLACK;
 	}
 	successor->color = to_delete->color;
 }
@@ -112,8 +114,12 @@ void	ft_delete_rbtree(t_rbtree **root, t_rbtree *to_delete, void (*free_data)(vo
 	if (*root == to_delete)
 		*root = to_replace;
 	// if (to_replace->color & DB_RBBLACK)
-	printf("REPEARING TREE -> %d\n", ((t_rbdata *)to_replace->data)->size);
-	ft_delete_repair_rbtree(to_replace);
+	printf("\n***********************************************\n");
+	printf("REPEARING TREE -> %d\n", to_delete ? ((t_rbdata *)to_delete->data)->size : -1);
+	ft_print_rbtree(*root);
+	printf("***********************************************\n\n");
+	// ft_delete_repair_rbtree(to_replace);
+	ft_delete_repair_rbtree(to_delete);
 	free_data(to_delete->data);
 	free(to_delete);
 }

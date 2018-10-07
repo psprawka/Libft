@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/05 17:46:49 by psprawka          #+#    #+#             */
-/*   Updated: 2018/10/06 20:13:01 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/10/07 13:38:51 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void			ft_insert_rbtree(t_rbtree **root, t_rbtree *to_insert, int (*fct)(void *,
 t_rbtree		*ft_search_rbtree(t_rbtree *root, t_rbtree *node, int (*fct)(void *, void *));
 t_rbtree		*ft_search_successor_rbtree(t_rbtree *root);
 void			ft_delete_rbtree(t_rbtree **root, t_rbtree *to_delete, void (*free_data)(void *));
-void			ft_delete_repair_rbtree(t_rbtree *node);
+int				ft_delete_repair_rbtree(t_rbtree *node);
+void			ft_print_rbtree(t_rbtree *node);
 
 #endif
