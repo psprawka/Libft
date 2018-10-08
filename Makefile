@@ -6,19 +6,20 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/24 11:51:37 by psprawka          #+#    #+#              #
-#    Updated: 2018/09/26 09:04:16 by psprawka         ###   ########.fr        #
+#    Updated: 2018/10/07 12:13:30 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 NAME = libft.a
 FLAGS += -g -Wall -Wextra -Werror
-#FLAGS +=  -fsanitize=address
+# FLAGS +=  -fsanitize=address
 
 SRC_DIR 	= srcs/
+DATA_STUCTS	= data_structures/
 HT			= hash_table/
 LIST		= list/
-DATA_STUCTS	= data_structures/
+RBT			= red_black_tree/
 QUEUE		= queue/
 NUMERIC		= numeric/
 STRING		= string/
@@ -59,11 +60,11 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(STRING)ft_strchr.c \
 		$(SRC_DIR)$(STRING)ft_strcmp.c \
 		$(SRC_DIR)$(STRING)ft_strcpy.c \
-		$(SRC_DIR)$(STRING)ft_strdup_chr.c \
 		$(SRC_DIR)$(STRING)ft_strdup.c \
+		$(SRC_DIR)$(STRING)ft_strdup_chr.c \
 		$(SRC_DIR)$(STRING)ft_strjoin.c \
-		$(SRC_DIR)$(STRING)ft_strlen_chr.c \
 		$(SRC_DIR)$(STRING)ft_strlen.c \
+		$(SRC_DIR)$(STRING)ft_strlen_chr.c \
 		$(SRC_DIR)$(STRING)ft_strncat.c \
 		$(SRC_DIR)$(STRING)ft_strncmp.c \
 		$(SRC_DIR)$(STRING)ft_strncpy.c \
@@ -90,6 +91,15 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(DATA_STUCTS)$(LIST)add_list.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(LIST)free_list.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(LIST)remove_list.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(RBT)create_rbtree.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(RBT)delete_rbtree.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(RBT)delete_repair_rbtree.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(RBT)get_family_rbtree.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(RBT)insert_rbtree.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(RBT)insert_repair_rbtree.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(RBT)print_rbtree.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(RBT)rotations_rbtree.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(RBT)search_rbtree.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)free_queue.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)init_queue.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)push_queue.c \

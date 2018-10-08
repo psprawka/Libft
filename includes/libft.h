@@ -6,11 +6,10 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 18:35:16 by psprawka          #+#    #+#             */
-/*   Updated: 2018/10/01 23:14:23 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/10/07 22:10:23 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
 # define LIBFT_H
 
 # include <unistd.h>
@@ -20,6 +19,7 @@
 
 # include "libft_define.h"
 # include "libft_struct.h"
+# include "libft_rbtree.h"
 
 
 static t_ht_item HASH_DELETED_ITEM = {NULL, NULL}; 
