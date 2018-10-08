@@ -6,31 +6,28 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/21 03:35:15 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/21 09:36:44 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/10/01 23:03:47 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_remove_list(t_node **list, void *data)
+void	ft_remove_list(t_node **list, t_node *node)
 {
 	t_node	*tmp;
 	t_node	*prev;
 
 	tmp = *list;
 	prev = NULL;
-
 	while (tmp)
 	{
-		if (tmp->data == data)
+		if (tmp == node)
 		{
 			if (prev == NULL)
 				*list = tmp->next;
 			else
-			{
 				prev->next = tmp->next;
-				free(tmp);
-			}
+			free(tmp);
 			return ;
 		}
 		prev = tmp;
