@@ -6,7 +6,7 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/24 11:51:37 by psprawka          #+#    #+#              #
-#    Updated: 2018/10/07 12:13:30 by psprawka         ###   ########.fr        #
+#    Updated: 2018/10/08 18:11:16 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ HT			= hash_table/
 LIST		= list/
 RBT			= red_black_tree/
 QUEUE		= queue/
+STACK		= stack/
 NUMERIC		= numeric/
 STRING		= string/
 MEMORY		= memory/
@@ -105,8 +106,11 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)push_queue.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)push_pqueue.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)pop_queue.c \
-		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)top_queue.c
-
+		$(SRC_DIR)$(DATA_STUCTS)$(QUEUE)top_queue.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(STACK)is_empty_stack.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(STACK)push_stack.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(STACK)pop_stack.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(STACK)top_stack.c 
 
 SRC_PRINTF = $(SRC_DIR)$(IO)$(PRINTF)atoi_and_ulltoa.c \
 		$(SRC_DIR)$(IO)$(PRINTF)ft_printf.c \

@@ -6,10 +6,11 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 18:35:16 by psprawka          #+#    #+#             */
-/*   Updated: 2018/10/07 22:10:23 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/10/08 14:15:54 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LIBFT_H
 # define LIBFT_H
 
 # include <unistd.h>
@@ -72,6 +73,13 @@ void			ft_push_queue(t_queue **head, t_node *new);
 void			ft_push_pqueue(t_queue **head, t_node *new, int (*fct)(t_node *, t_node *));
 void			*ft_top_queue(t_queue *queue);
 
+/*
+**	data_structures/stack/
+*/
+bool			ft_is_empty_stack(t_node *stack);
+int				ft_push_stack(t_node **stack, t_node *to_push);
+t_node			*ft_pop_stack(t_node **stack);
+void			*ft_top_stack(t_node *stack);
 /*
 **	memory/
 */
