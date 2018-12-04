@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 03:35:17 by psprawka          #+#    #+#             */
-/*   Updated: 2018/09/26 06:02:49 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/12/05 00:21:44 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,14 @@ typedef struct	s_ht_item
 	void	*value;
 	
 }				t_ht_item;
+
+typedef struct	s_btree
+{
+	void			*data;
+	struct	s_btree	*left;
+	struct	s_btree *right;
+
+}				t_btree;
 
 /*
 **	In t_ht_table:

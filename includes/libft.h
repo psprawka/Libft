@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 18:35:16 by psprawka          #+#    #+#             */
-/*   Updated: 2018/10/08 14:15:54 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/12/05 00:22:58 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,12 @@ int				ft_printf(const char *format, ...);
 */
 t_node			*ft_init_node(void *data, size_t dsize);
 void			remove_node(t_queue **queue, t_node *prev, t_node *remove);
+
+
+/*
+**  data_structures/btree
+*/
+
 
 /*
 **	data_structures/hash_table/
