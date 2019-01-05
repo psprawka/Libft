@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 18:35:16 by psprawka          #+#    #+#             */
-/*   Updated: 2018/12/05 00:22:58 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/01/05 04:37:08 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include "libft_rbtree.h"
 
 
-static t_ht_item HASH_DELETED_ITEM = {NULL, NULL}; 
+// static t_ht_item HASH_DELETED_ITEM = {NULL, NULL}; 
 
 /*
 **	io/
@@ -51,13 +51,13 @@ void			remove_node(t_queue **queue, t_node *prev, t_node *remove);
 **	data_structures/hash_table/
 */
 void			ft_free_item_ht(t_ht_item *item);
-void			ft_free_table_ht(t_ht_table *table);
-int				ft_hash_ht(void *value, int size, int colision);
+void			ft_free_ht(t_ht_table *table);
+int				ft_hash_ht(void *value, int size);
 t_ht_item		*ft_init_item_ht(void *key, void *value);
 t_ht_table		*ft_init_table_ht(int size);
 int				ft_insert_ht(t_ht_table *table, t_ht_item *item, int (*fcmp)(void *, void *));
 void			ft_print_ht(t_ht_table *table);
-int				ft_remove_ht(t_ht_table *table, void *key, int (*fcmp)(void *, void *));
+int		        ft_remove_item_ht(t_ht_table *table, void *key, int (*fcmp)(void *, void *));
 void			*ft_search_ht(t_ht_table *table, void *key, int (*fcmp)(void *, void *));
 
 /*

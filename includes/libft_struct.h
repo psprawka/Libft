@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 03:35:17 by psprawka          #+#    #+#             */
-/*   Updated: 2018/12/05 00:21:44 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/01/04 01:37:39 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ typedef struct	s_queue
 
 typedef struct	s_ht_item
 {
-	void	*key;
-	void	*value;
-	
+	void				*key;
+	void				*value;
+	struct s_ht_item	*next;
+
 }				t_ht_item;
 
 typedef struct	s_btree

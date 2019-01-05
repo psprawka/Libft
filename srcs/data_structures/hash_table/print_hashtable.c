@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 01:05:49 by psprawka          #+#    #+#             */
-/*   Updated: 2018/09/26 09:16:30 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/01/05 04:40:10 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 void	ft_print_ht(t_ht_table *table)
 {
-	int		i;
+	t_ht_item	*item;
+	int			i;
 
 	if (!table || !table->hash_table)
 		return ;
@@ -23,9 +24,12 @@ void	ft_print_ht(t_ht_table *table)
 	ft_printf("---------------- HASH TABLE ----------------\n[key:value]:\n");
 	while (i < table->size)
 	{
-		if (table->hash_table[i])
-			printf("%d. [%s:%s]\n", i, (char *)table->hash_table[i]->key,
-			(char *)table->hash_table[i]->value);
+		item = table->hash_table[i];
+		while (item)
+		{
+			printf("%d. [%s:%s]\n", i, (char *)item->key, (char *)item->value);
+			item = item->next;
+		}
 		i++;
 	}
 	ft_printf("--------------------------------------------\n\n");

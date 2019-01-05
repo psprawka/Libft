@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 01:05:09 by psprawka          #+#    #+#             */
-/*   Updated: 2018/09/26 09:11:19 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/01/04 02:14:22 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ t_ht_item	*ft_init_item_ht(void *key, void *value)
 		return (NULL);
 	new->key = key;
 	new->value = value;
+	new->next = NULL;
 	return (new);
 }
 
 /*
 **	size should be always prime since it will help to distrubute buckets equivalently
 */
-
 t_ht_table	*ft_init_table_ht(int size)
 {
 	t_ht_table	*new;

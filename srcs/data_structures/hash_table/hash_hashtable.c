@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 03:22:04 by psprawka          #+#    #+#             */
-/*   Updated: 2018/09/26 09:11:57 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/01/04 02:20:08 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ static int	ft_create_hash_ht(void *value, int base, int size)
 	return ((int)hash);
 }
 
-int			ft_hash_ht(void *value, int size, int colision)
+int			ft_hash_ht(void *value, int size)
 {
 	int		hash;
 
 	hash = ft_create_hash_ht(value, HASH_BASE, size);
-	hash += (ft_create_hash_ht(value, HASH_BASE2, size) * colision);
+	hash += (ft_create_hash_ht(value, HASH_BASE2, size));
 	return (hash % size);
 }

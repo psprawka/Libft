@@ -6,7 +6,7 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/24 11:51:37 by psprawka          #+#    #+#              #
-#    Updated: 2018/10/08 18:11:16 by psprawka         ###   ########.fr        #
+#    Updated: 2019/01/05 04:42:07 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -127,9 +127,9 @@ OBJ += $(SRC:.c=.o)
 OBJ += $(SRC_PRINTF:.c=.o)
 
 BUILD_PRINT = @echo "\r\033[38;5;214m[LIBFT] \x1B[33mBuilding $<"
-DONE = @echo "\033[K\033[1;38;5;226mLIBFT ready to use!"
-CLEAN_O = @echo "\033[38;5;246mObject files removed! [LIBFT]"
-CLEAN_A = @echo "\033[38;5;246mExecutable removed! [LIBFT]"
+DONE = @echo "\033[K\033[1;38;5;226mLIBFT ready to use!\x1B[0m"
+CLEAN_O = @echo "\033[38;5;246mObject files removed! [LIBFT]\x1B[0m"
+CLEAN_A = @echo "\033[38;5;246mExecutable removed! [LIBFT]\x1B[0m"
 
 
 all: $(NAME)
