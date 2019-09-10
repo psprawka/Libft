@@ -6,7 +6,7 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/24 11:51:37 by psprawka          #+#    #+#              #
-#    Updated: 2019/01/05 04:42:07 by psprawka         ###   ########.fr        #
+#    Updated: 2019/09/10 18:03:38 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(STRING)ft_strcat.c \
 		$(SRC_DIR)$(STRING)ft_strchr.c \
 		$(SRC_DIR)$(STRING)ft_strcmp.c \
+		$(SRC_DIR)$(STRING)ft_strcount_chr.c \
 		$(SRC_DIR)$(STRING)ft_strcpy.c \
 		$(SRC_DIR)$(STRING)ft_strdup.c \
 		$(SRC_DIR)$(STRING)ft_strdup_chr.c \
@@ -73,6 +74,7 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(STRING)ft_strnstr.c \
 		$(SRC_DIR)$(STRING)ft_strrev.c \
 		$(SRC_DIR)$(STRING)ft_strstr.c \
+		$(SRC_DIR)$(STRING)ft_strsplit_chr.c \
 		$(SRC_DIR)$(STRING)ft_strsub.c \
 		$(SRC_DIR)$(STRING)ft_wstrlen.c \
 		$(SRC_DIR)$(STRING)ft_strtrim.c \

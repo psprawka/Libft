@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 18:35:16 by psprawka          #+#    #+#             */
-/*   Updated: 2019/01/05 04:37:08 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/09/10 18:01:40 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ void			ft_strclr(char *s);
 char			*ft_strcat(char *dest, char *src);
 char			*ft_strchr(char *str, char to_find);
 int				ft_strcmp(char *s1, char *s2);
+int     		ft_strcount_chr(char *str, char chr);
 char			*ft_strcpy(char *dest, char *src);
 char			*ft_strdup_chr(char *src, char c);
 char			*ft_strdup(char *src);
@@ -132,6 +133,7 @@ char			*ft_strncpy(char *str, int size);
 char			*ft_strnew(size_t size);
 char			*ft_strnstr(char *str, char *to_find, size_t len);
 char			*ft_strrev(char *str);
+char    		**ft_strsplit_chr(char *str, char c);
 int				ft_strstr(char *str, char *to_find);
 char			*ft_strsub(char *str, int start, size_t len);
 int				ft_wstrlen(wchar_t *ws);
@@ -149,7 +151,6 @@ void			ft_set_max_fd(int *maxfd, int newfd);
 //	to fix:
 //	-> all numeric
 //	-> string/strjoin
-//	-> string/strsplit
 //	-> string/strnstr
 //	-> string/strtrim
 //	-> tools/either of them
