@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 17:17:33 by psprawka          #+#    #+#             */
-/*   Updated: 2019/09/10 18:22:39 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/09/14 12:53:43 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ char    **ft_strsplit_chr(char *str, char c)
     int     occurances;
     char    **split;
     
-    if (!str || ((occurances = ft_strcount_chr(str, c)) == EXIT_FAILURE) ||
-        (split = (char **)malloc(sizeof(char *) * (occurances + 1))) == NULL)
+    if (!str || ((occurances = ft_strcount_chr(str, c)) == -1) ||
+        (split = (char **)malloc(sizeof(char *) * (occurances + 2))) == NULL)
         return (NULL);
     i = 0;
     offset = 0;
@@ -38,5 +38,6 @@ char    **ft_strsplit_chr(char *str, char c)
         offset += len + 1;
         i++;
     }
+    split[i] = NULL;
     return (split);
 }

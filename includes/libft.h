@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 18:35:16 by psprawka          #+#    #+#             */
-/*   Updated: 2019/09/10 18:01:40 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/09/14 13:00:20 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ bool			ft_is_empty_stack(t_node *stack);
 int				ft_push_stack(t_node **stack, t_node *to_push);
 t_node			*ft_pop_stack(t_node **stack);
 void			*ft_top_stack(t_node *stack);
+
 /*
 **	memory/
 */
@@ -108,6 +109,11 @@ char			*ft_convert_uni(wchar_t wide);
 char			*ft_ftoa(double n);
 char			*ft_itoa(int nbr);
 void			ft_putnbr(int nb);
+
+/*
+**	2D_array/
+*/
+int 			ft_2Darr_size(char **arr);
 
 /*
 **	string/

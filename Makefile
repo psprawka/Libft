@@ -6,7 +6,7 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/24 11:51:37 by psprawka          #+#    #+#              #
-#    Updated: 2019/09/10 18:03:38 by psprawka         ###   ########.fr        #
+#    Updated: 2019/09/14 13:12:15 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ RBT			= red_black_tree/
 QUEUE		= queue/
 STACK		= stack/
 NUMERIC		= numeric/
+2D_ARRAY	= 2D_array/
 STRING		= string/
 MEMORY		= memory/
 IO			= io/
@@ -52,6 +53,7 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(NUMERIC)ft_ftoa.c \
 		$(SRC_DIR)$(NUMERIC)ft_itoa.c \
 		$(SRC_DIR)$(NUMERIC)ft_putnbr.c \
+		$(SRC_DIR)$(2D_ARRAY)ft_2Darr_size.c \
 		$(SRC_DIR)$(STRING)ft_are_whitespaces.c \
 		$(SRC_DIR)$(STRING)ft_putchar.c \
 		$(SRC_DIR)$(STRING)ft_putendl.c \
