@@ -15,8 +15,6 @@ My very own 42 library of basic C functions :smile:
 * [memory manipulation,](https://github.com/psprawka/Libft/tree/master/srcs/memory)
 * [string manipulation,](https://github.com/psprawka/Libft/tree/master/srcs/string)
 * [numeric functions,](https://github.com/psprawka/Libft/tree/master/srcs/numeric)
+* [2D array functions,](https://github.com/psprawka/Libft/tree/master/srcs/2D_array)
 * [input/output operations,](https://github.com/psprawka/Libft/tree/master/srcs/io)
 * [additional no-category tools.](https://github.com/psprawka/Libft/tree/master/srcs/tools)
-
-# !WARNING!
-DO NOT USE FT_PRINTF; Function ft_itoa has been changed from heap to stack memory, thus since ft_printf was coded according to "old" ft_itoa version, it tries to free stack pointer. I'll fix it once I have time or once I'll have to 😛

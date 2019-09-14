@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int.c                                              :+:      :+:    :+:   */
+/*   int_uint.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 14:19:42 by psprawka          #+#    #+#             */
-/*   Updated: 2017/11/27 14:19:44 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/09/14 23:15:37 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftprintf.h"
+#include "libftprintf.h"
 
 /*
 ** print_width_int prints both precision and width
@@ -62,7 +62,6 @@ void			parse_int(t_flags *bag, long int nb)
 
 	len = ft_itoa(nb);
 	LEN = (nb == 0 && IF_PREC == true ? 0 : ft_strlen(len));
-	free(len);
 	nb < 0 ? LEN-- : LEN;
 	MINUS = WIDTH < 0 || (PRECISION < 0 && STAR == false) ? true : MINUS;
 	WIDTH = WIDTH < 0 ? WIDTH * -1 : WIDTH;
@@ -84,16 +83,16 @@ void			print_int(t_flags *bag, va_list ap)
 	if (ZERO == true)
 		print_plus(bag, &nb);
 	if (SPACE == true && WIDTH--)
-		ftt_putchar(' ', bag);
+		ftp_putchar(' ', bag);
 	while (MINUS == false && WIDTH-- > 0)
-		ZERO == true ? ftt_putchar('0', bag) : ftt_putchar(' ', bag);
+		ZERO == true ? ftp_putchar('0', bag) : ftp_putchar(' ', bag);
 	print_plus(bag, &nb);
 	while (PRECISION-- > 0)
-		ftt_putchar('0', bag);
+		ftp_putchar('0', bag);
 	if ((LEN > 0) || (nb == 0 && IF_PREC == false))
-		ftt_putnbr(nb, bag);
+		ftp_putnbr(nb, bag);
 	while (WIDTH-- > 0)
-		ftt_putchar(' ', bag);
+		ftp_putchar(' ', bag);
 }
 
 /*
@@ -128,13 +127,13 @@ void			print_unsigned_int(t_flags *bag, va_list ap)
 		print_hash(bag, nb);
 	if (MINUS == false)
 		while (WIDTH-- > 0)
-			ZERO == true ? ftt_putchar('0', bag) : ftt_putchar(' ', bag);
+			ZERO == true ? ftp_putchar('0', bag) : ftp_putchar(' ', bag);
 	print_hash(bag, nb);
 	while (PRECISION-- > 0)
-		ftt_putchar('0', bag);
+		ftp_putchar('0', bag);
 	if (DISPLAY == true)
-		ftt_putstr(print, bag);
+		ftp_putstr(print, bag);
 	while (WIDTH-- > 0)
-		ftt_putchar(' ', bag);
+		ftp_putchar(' ', bag);
 	free(print);
 }

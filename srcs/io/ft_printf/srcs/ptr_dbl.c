@@ -6,11 +6,11 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 16:39:47 by psprawka          #+#    #+#             */
-/*   Updated: 2017/11/28 16:39:49 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/09/14 23:15:13 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftprintf.h"
+#include "libftprintf.h"
 
 /*
 ** ------------------------ UNSIGNED LONG LONG - p -----------------------------
@@ -42,22 +42,22 @@ void	print_pointer(t_flags *bag, va_list ap)
 	if (ZERO == true)
 		print_hash(bag, nb);
 	while (MINUS == false && WIDTH-- > 0)
-		ZERO == true ? ftt_putchar('0', bag) : ftt_putchar(' ', bag);
+		ZERO == true ? ftp_putchar('0', bag) : ftp_putchar(' ', bag);
 	print_hash(bag, nb);
 	while (PRECISION-- > 0)
-		ftt_putchar('0', bag);
+		ftp_putchar('0', bag);
 	if (DISPLAY == true)
-		ftt_putstr(print, bag);
+		ftp_putstr(print, bag);
 	while (WIDTH-- > 0)
-		ftt_putchar(' ', bag);
+		ftp_putchar(' ', bag);
 	free(print);
 }
 
 /*
-** ---------------------------- FLOAT - f, F, ----------------------------------
+** ---------------------------- FLOAT - f, F ----------------------------------
 */
 
-char	*round_up(char *print)
+static char	*round_up(char *print)
 {
 	int	i;
 	int nb;
@@ -99,13 +99,12 @@ void	print_float(t_flags *bag, va_list ap)
 	print = parse_flt(bag, print);
 	nb < 0 ? WIDTH++ : i--;
 	while (MINUS == false && WIDTH-- > 0)
-		ZERO == true ? ftt_putchar('0', bag) : ftt_putchar(' ', bag);
+		ZERO == true ? ftp_putchar('0', bag) : ftp_putchar(' ', bag);
 	print_plus(bag, (long int *)&nb);
 	while (print[i] != '.' && print[i] != '\0')
-		ftt_putchar(print[i++], bag);
+		ftp_putchar(print[i++], bag);
 	while (PRECISION-- > 0)
-		ftt_putchar(print[i++], bag);
+		ftp_putchar(print[i++], bag);
 	while (WIDTH-- > 0)
-		ftt_putchar(' ', bag);
-	free(print);
+		ftp_putchar(' ', bag);
 }

@@ -6,11 +6,11 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 11:39:39 by psprawka          #+#    #+#             */
-/*   Updated: 2017/11/27 11:39:41 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/09/14 22:01:28 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftprintf.h"
+#include "libftprintf.h"
 
 void	flags(char *f, int *i, t_flags *bag)
 {
@@ -97,7 +97,6 @@ void	precision(char *f, int *i, t_flags *bag, va_list ap)
 ** - 5 if j appears;
 ** - 6 if z appears;
 */
-
 void	arguments(char *f, int *i, t_flags *bag)
 {
 	while (f[*i] != '\0' && (f[*i] == 'h' || f[*i] == 'l' || f[*i] == 'z' ||

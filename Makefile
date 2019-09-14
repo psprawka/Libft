@@ -6,7 +6,7 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/24 11:51:37 by psprawka          #+#    #+#              #
-#    Updated: 2019/09/14 13:12:15 by psprawka         ###   ########.fr        #
+#    Updated: 2019/09/14 22:47:48 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(IO)ft_putendl_fd.c \
 		$(SRC_DIR)$(IO)ft_putnbr_fd.c \
 		$(SRC_DIR)$(IO)ft_putstr_fd.c \
-		$(SRC_DIR)$(IO)gnl.c \
+		$(SRC_DIR)$(IO)ft_gnl.c \
 		$(SRC_DIR)$(MEMORY)ft_bzero.c \
 		$(SRC_DIR)$(MEMORY)ft_memalloc.c \
 		$(SRC_DIR)$(MEMORY)ft_memchr.c \
@@ -47,9 +47,11 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(MEMORY)ft_memset.c \
 		$(SRC_DIR)$(MEMORY)ft_swap.c \
 		$(SRC_DIR)$(NUMERIC)ft_atoi.c \
+		$(SRC_DIR)$(NUMERIC)ft_convert_binary.c \
 		$(SRC_DIR)$(NUMERIC)ft_convert_hex.c \
 		$(SRC_DIR)$(NUMERIC)ft_convert_octal.c \
 		$(SRC_DIR)$(NUMERIC)ft_convert_uni.c \
+		$(SRC_DIR)$(NUMERIC)ft_ulltoa.c \
 		$(SRC_DIR)$(NUMERIC)ft_ftoa.c \
 		$(SRC_DIR)$(NUMERIC)ft_itoa.c \
 		$(SRC_DIR)$(NUMERIC)ft_putnbr.c \
@@ -116,15 +118,13 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(DATA_STUCTS)$(STACK)pop_stack.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(STACK)top_stack.c 
 
-SRC_PRINTF = $(SRC_DIR)$(IO)$(PRINTF)atoi_and_ulltoa.c \
-		$(SRC_DIR)$(IO)$(PRINTF)ft_printf.c \
+SRC_PRINTF = $(SRC_DIR)$(IO)$(PRINTF)ft_printf.c \
 		$(SRC_DIR)$(IO)$(PRINTF)print.c \
-		$(SRC_DIR)$(IO)$(PRINTF)conversion.c \
 		$(SRC_DIR)$(IO)$(PRINTF)gather_flags.c \
 		$(SRC_DIR)$(IO)$(PRINTF)str_chr.c \
 		$(SRC_DIR)$(IO)$(PRINTF)ptr_dbl.c \
 		$(SRC_DIR)$(IO)$(PRINTF)int_uint.c \
-		$(SRC_DIR)$(IO)$(PRINTF)indirect_ft.c \
+		$(SRC_DIR)$(IO)$(PRINTF)tools.c \
 		$(SRC_DIR)$(IO)$(PRINTF)ft_libftprintf.c
 
 OBJ += $(SRC:.c=.o)

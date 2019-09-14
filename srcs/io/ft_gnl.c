@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl.c                                              :+:      :+:    :+:   */
+/*   ft_gnl.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/03 17:40:05 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/17 12:52:50 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/09/14 22:00:31 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static int		find_line(char **line, int fd, char *temp, int *i)
 	return (ret == 0 ? 0 : 1);
 }
 
-int				gnl(int fd, char **line)
+int				ft_gnl(int fd, char **line)
 {
 	static char	*rest;
 	int			i_ret[2];

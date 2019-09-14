@@ -6,11 +6,11 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:32:10 by psprawka          #+#    #+#             */
-/*   Updated: 2017/11/08 14:32:13 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/09/14 22:01:23 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftprintf.h"
+#include "libftprintf.h"
 
 /*
 ** argument prototype: %[flags][width/margin][.precision][hh|h|l|ll|j|z]type

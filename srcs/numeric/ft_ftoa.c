@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 15:39:02 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/17 13:18:16 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/09/14 22:55:36 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,5 @@ char	*ft_ftoa(double n)
 	while (first[++i])
 		flt[i] = first[i];
 	create_string(n, flt, i);
-	free(first);
 	return (flt);
 }

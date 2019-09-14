@@ -6,11 +6,12 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 19:35:37 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/17 14:02:56 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/09/14 20:15:59 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 
 void	ft_putnbr_fd(long long nb, int fd)
 {
