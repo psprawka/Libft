@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 18:35:16 by psprawka          #+#    #+#             */
-/*   Updated: 2019/09/17 21:04:15 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/09/17 21:26:57 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(long long nb, int fd);
 void			ft_putstr_fd(char *s, int fd);
-int				ft_gnl(int fd, char **line);
+int				ft_get_next_line(int fd, char **line);
 int				ft_printf(const char *format, ...);
 
 /*

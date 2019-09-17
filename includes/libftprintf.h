@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 16:39:57 by psprawka          #+#    #+#             */
-/*   Updated: 2019/09/14 23:38:36 by psprawka         ###   ########.fr       */
+/*   Updated: 2019/09/17 21:25:27 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdint.h>
 # include <stdbool.h>
 # include <wchar.h>
-# include "Libft/libft.h"
+# include "libft.h"
 
 # define LL_MAX 	9223372036854775807
 # define LL_MIN 	-9223372036854775807 - 1
