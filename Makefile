@@ -6,7 +6,7 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/24 11:51:37 by psprawka          #+#    #+#              #
-#    Updated: 2019/09/17 21:04:33 by psprawka         ###   ########.fr        #
+#    Updated: 2019/09/22 10:09:28 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(NUMERIC)ft_putnbr.c \
 		$(SRC_DIR)$(2D_ARRAY)ft_2Darr_size.c \
 		$(SRC_DIR)$(2D_ARRAY)ft_2Darr_free.c \
+		$(SRC_DIR)$(2D_ARRAY)ft_2Darr_print.c \
 		$(SRC_DIR)$(STRING)ft_are_whitespaces.c \
 		$(SRC_DIR)$(STRING)ft_putchar.c \
 		$(SRC_DIR)$(STRING)ft_putendl.c \
