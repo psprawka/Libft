@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 03:35:17 by psprawka          #+#    #+#             */
-/*   Updated: 2019/01/04 01:37:39 by psprawka         ###   ########.fr       */
+/*   Updated: 2020/01/11 02:25:11 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@ typedef struct	s_node
 	struct s_node	*next;
 
 }				t_node;
+
+typedef struct	s_dnode
+{
+	void			*data;
+	size_t			d_size;
+	struct s_dnode	*prev;
+	struct s_dnode	*next;
+
+}				t_dnode;
 
 typedef struct	s_queue
 {

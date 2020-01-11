@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_list.c                                         :+:      :+:    :+:   */
+/*   remove_double_list.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/21 03:35:23 by psprawka          #+#    #+#             */
-/*   Updated: 2020/01/11 02:29:07 by psprawka         ###   ########.fr       */
+/*   Created: 2020/01/11 02:22:19 by psprawka          #+#    #+#             */
+/*   Updated: 2020/01/11 02:35:13 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_add_back_list(t_node **list, t_node *node)
+void	ft_remove_double_list(t_dnode **list, t_dnode *node)
 {
-	t_node *tmp;
+	t_dnode	*tmp;
 
-	if (!(*list))
-	{
-		*list = node;
-		return (EXIT_SUCCESS);
-	}
-	
 	tmp = *list;
-	while (tmp->next)
-		tmp = tmp->next;
-		
-	tmp->next = node;
-	return (EXIT_SUCCESS);
-}
-
-int		ft_add_front_list(t_node **list, t_node *node)
-{
-	if (!(*list))
+	while (tmp)
 	{
-		*list = node;
-		return (EXIT_SUCCESS);
+		if (tmp == node)
+		{
+			if (!tmp->prev)
+				*list = tmp->next;
+			else
+				tmp->prev->next = tmp->next;
+			free(tmp);
+			return ;
+		}
+		tmp = tmp->next;
 	}
-	
-	node->next = *list;
-	*list = node;
-	return (EXIT_SUCCESS);
 }

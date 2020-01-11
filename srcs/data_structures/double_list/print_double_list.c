@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_list.c                                         :+:      :+:    :+:   */
+/*   print_double_list.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/21 03:35:23 by psprawka          #+#    #+#             */
-/*   Updated: 2020/01/11 02:29:07 by psprawka         ###   ########.fr       */
+/*   Created: 2020/01/11 02:22:16 by psprawka          #+#    #+#             */
+/*   Updated: 2020/01/11 02:48:34 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_add_back_list(t_node **list, t_node *node)
+void	ft_print_double_list(t_dnode *list, void (*fct_print)(void *))
 {
-	t_node *tmp;
+	int		i;
+	t_dnode	*tmp;
 
-	if (!(*list))
+	i = 1;
+	tmp = list;
+	printf("%s\nDOUBLE LIST:\n", YELLOW);
+	while (tmp)
 	{
-		*list = node;
-		return (EXIT_SUCCESS);
-	}
-	
-	tmp = *list;
-	while (tmp->next)
+		ft_printf("%d. p:[%p], pdata:[%d]\n", i++, tmp, tmp->data);
+        if (fct_print)
+			fct_print(tmp->data);
 		tmp = tmp->next;
-		
-	tmp->next = node;
-	return (EXIT_SUCCESS);
-}
-
-int		ft_add_front_list(t_node **list, t_node *node)
-{
-	if (!(*list))
-	{
-		*list = node;
-		return (EXIT_SUCCESS);
 	}
-	
-	node->next = *list;
-	*list = node;
-	return (EXIT_SUCCESS);
+	printf("%s\n", NORMAL);
 }

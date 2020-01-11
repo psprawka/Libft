@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 18:35:16 by psprawka          #+#    #+#             */
-/*   Updated: 2019/09/17 21:26:57 by psprawka         ###   ########.fr       */
+/*   Updated: 2020/01/11 02:51:27 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,16 @@ void			remove_node(t_queue **queue, t_node *prev, t_node *remove);
 
 
 /*
+**	data_structures/double_list/
+*/
+int				ft_add_back_double_list(t_dnode **list, t_dnode *node);
+int				ft_add_front_double_list(t_dnode **list, t_dnode *node);
+void			ft_free_double_list(t_dnode *list, void (*fct_free)(void *));
+t_dnode		    *ft_init_double_list(void *data, size_t dsize);
+void			ft_print_double_list(t_dnode *list, void (*fct_print)(void *));
+void			ft_remove_double_list(t_dnode **list, t_dnode *node);
+
+/*
 **	data_structures/hash_table/
 */
 void			ft_free_item_ht(t_ht_item *item);
@@ -65,8 +75,8 @@ void			*ft_search_ht(t_ht_table *table, void *key, int (*fcmp)(void *, void *));
 */
 int				ft_add_back_list(t_node **list, t_node *node);
 int				ft_add_front_list(t_node **list, t_node *node);
-void			ft_free_list(t_node **list, void (*fct_free)(void *));
-void			ft_print_list(t_node *list);
+void			ft_free_list(t_node *list, void (*fct_free)(void *));
+void			ft_print_list(t_node *list, void (*fct_print)(void *));
 void			ft_remove_list(t_node **list, t_node *node);
 
 /*
