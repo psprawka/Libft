@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 02:22:13 by psprawka          #+#    #+#             */
-/*   Updated: 2020/01/11 02:43:16 by psprawka         ###   ########.fr       */
+/*   Updated: 2020/02/22 15:23:27 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_dnode		*ft_init_double_list(void *data, size_t dsize)
 {
 	t_dnode	*new;
 
-	if (!(new = ft_memalloc(sizeof(t_dnode))))
+	if (!(new = (t_dnode *)malloc(sizeof(t_dnode))))
 		return (NULL);
 	new->data = data;
 	new->d_size = dsize;

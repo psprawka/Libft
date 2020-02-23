@@ -6,7 +6,7 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/24 11:51:37 by psprawka          #+#    #+#              #
-#    Updated: 2020/01/11 02:50:42 by psprawka         ###   ########.fr        #
+#    Updated: 2020/02/22 15:00:06 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,7 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(DATA_STUCTS)$(DLIST)add_double_list.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(DLIST)free_double_list.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(DLIST)init_double_list.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(DLIST)print_double_list.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(DLIST)remove_double_list.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(HT)free_hashtable.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(HT)hash_hashtable.c \

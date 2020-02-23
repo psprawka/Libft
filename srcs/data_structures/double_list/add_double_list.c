@@ -6,23 +6,23 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 02:22:07 by psprawka          #+#    #+#             */
-/*   Updated: 2020/01/11 02:48:32 by psprawka         ###   ########.fr       */
+/*   Updated: 2020/02/23 09:01:16 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_add_back_double_list(t_dnode **list, t_dnode *node)
+int		ft_add_back_double_list(t_dnode **list, t_dnode *node) //void
 {
 	t_dnode *tmp;
 
-	if (!(*list))
+	tmp = *list;
+	if (!tmp)
 	{
 		*list = node;
 		return (EXIT_SUCCESS);
 	}
-	
-	tmp = *list;
+
 	while (tmp->next)
 		tmp = tmp->next;
         
@@ -31,7 +31,7 @@ int		ft_add_back_double_list(t_dnode **list, t_dnode *node)
 	return (EXIT_SUCCESS);
 }
 
-int		ft_add_front_double_list(t_dnode **list, t_dnode *node)
+int		ft_add_front_double_list(t_dnode **list, t_dnode *node) //void
 {
 	if (!(*list))
 	{
