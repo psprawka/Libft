@@ -6,6 +6,7 @@ My very own 42 library of basic C functions :smile:
   * [hash table management,](https://github.com/psprawka/Libft/tree/master/srcs/data_structures/hash_table)
   * [queue management,](https://github.com/psprawka/Libft/tree/master/srcs/data_structures/queue)
   * [stack management,](https://github.com/psprawka/Libft/tree/master/srcs/data_structures/stack)
+  * [doubly linked-list management,](https://github.com/psprawka/Libft/tree/master/srcs/data_structures/double_list)
   * [linked-list management,](https://github.com/psprawka/Libft/tree/master/srcs/data_structures/list)
   * [tree management,](https://github.com/psprawka/Libft/tree/master/srcs/data_structures/tree)
   * [red-black-tree management.](https://github.com/psprawka/Libft/tree/master/srcs/data_structures/red_black_tree)
