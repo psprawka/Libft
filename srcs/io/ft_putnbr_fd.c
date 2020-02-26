@@ -13,9 +13,9 @@
 #include "libft.h"
 
 
-void	ft_putnbr_fd(long long nb, int fd)
+void	ft_putnbr_fd()//long long nb, int fd)
 {
-	nb = 0; fd = 0;
+	//nb = 0; fd = 0;
 	// if (nb == -2147483648)
 	// {
 	// 	ft_putstr_fd("-2147483648", fd);

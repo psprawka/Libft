@@ -60,8 +60,8 @@ typedef struct	s_btree
 */
 typedef struct	s_ht_table
 {
-	uint16_t	size;	
-	uint16_t	count;		
+	int		size;	
+	int		count;		
 	t_ht_item	**hash_table;
 	
 }				t_ht_table;

@@ -29,7 +29,7 @@ STRING		= string/
 MEMORY		= memory/
 IO			= io/
 TOOLS		= tools/
-PRINTF		= ft_printf/srcs/
+# PRINTF		= ft_printf/srcs/
 
 HEADERS 	= ./includes
 
@@ -126,22 +126,22 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(DATA_STUCTS)$(STACK)pop_stack.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(STACK)top_stack.c 
 
-SRC_PRINTF = $(SRC_DIR)$(IO)$(PRINTF)ft_printf.c \
-		$(SRC_DIR)$(IO)$(PRINTF)print.c \
-		$(SRC_DIR)$(IO)$(PRINTF)gather_flags.c \
-		$(SRC_DIR)$(IO)$(PRINTF)str_chr.c \
-		$(SRC_DIR)$(IO)$(PRINTF)ptr_dbl.c \
-		$(SRC_DIR)$(IO)$(PRINTF)int_uint.c \
-		$(SRC_DIR)$(IO)$(PRINTF)tools.c \
-		$(SRC_DIR)$(IO)$(PRINTF)ft_libftprintf.c
+#SRC_PRINTF = $(SRC_DIR)$(IO)$(PRINTF)ft_printf.c \
+#		$(SRC_DIR)$(IO)$(PRINTF)print.c \
+#		$(SRC_DIR)$(IO)$(PRINTF)gather_flags.c \
+#		$(SRC_DIR)$(IO)$(PRINTF)str_chr.c \
+#		$(SRC_DIR)$(IO)$(PRINTF)ptr_dbl.c \
+#		$(SRC_DIR)$(IO)$(PRINTF)int_uint.c \
+#		$(SRC_DIR)$(IO)$(PRINTF)tools.c \
+#		$(SRC_DIR)$(IO)$(PRINTF)ft_libftprintf.c
 
 OBJ += $(SRC:.c=.o)
-OBJ += $(SRC_PRINTF:.c=.o)
+#OBJ += $(SRC_PRINTF:.c=.o)
 
-BUILD_PRINT = @echo "\r\033[38;5;214m[LIBFT] \x1B[33mBuilding $<"
-DONE = @echo "\033[K\033[1;38;5;226mLIBFT ready to use!\x1B[0m"
-CLEAN_O = @echo "\033[38;5;246mObject files removed! [LIBFT]\x1B[0m"
-CLEAN_A = @echo "\033[38;5;246mExecutable removed! [LIBFT]\x1B[0m"
+BUILD_PRINT = @echo "\r\033[38;5;214m[LIBFT] \033[38;5;208mBuilding $<"
+DONE = @echo "\033[K\033[1;38;5;226mLIBFT ready to use!\e[0m"
+CLEAN_O = @echo "\033[38;5;246mObject files removed! [LIBFT]\e[0m"
+CLEAN_A = @echo "\033[38;5;246mExecutable removed! [LIBFT]\e[0m"
 
 
 all: $(NAME)

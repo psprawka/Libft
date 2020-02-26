@@ -23,14 +23,14 @@
 
 void	ft_insert_rbtree(t_rbtree **root, t_rbtree *to_insert, int (*fct)(void *, void *))
 {
-	t_rbtree	*tptr;
+	//t_rbtree	*tptr;
 	t_rbtree	*parent;
 	
 	if (!root || !(*root))
 		*root = to_insert;
 	else
 	{
-		tptr = *root;
+		//tptr = *root;
 		parent = ft_search_rbtree(*root, to_insert, fct);
 		if (fct(parent->data, to_insert->data))
 			parent->left = to_insert;
