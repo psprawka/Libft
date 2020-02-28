@@ -93,6 +93,7 @@ SRC = $(SRC_DIR)$(IO)ft_putchar_fd.c  \
 		$(SRC_DIR)$(DATA_STUCTS)remove_node.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(DLIST)add_double_list.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(DLIST)free_double_list.c \
+		$(SRC_DIR)$(DATA_STUCTS)$(DLIST)get_last_double_list.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(DLIST)init_double_list.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(DLIST)print_double_list.c \
 		$(SRC_DIR)$(DATA_STUCTS)$(DLIST)remove_double_list.c \

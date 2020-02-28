@@ -53,6 +53,7 @@ void			remove_node(t_queue **queue, t_node *prev, t_node *remove);
 int				ft_add_back_double_list(t_dnode **list, t_dnode *node);
 int				ft_add_front_double_list(t_dnode **list, t_dnode *node);
 void			ft_free_double_list(t_dnode *list, void (*fct_free)(void *));
+t_dnode         *ft_get_last_double_list(t_dnode *head);
 t_dnode		    *ft_init_double_list(void *data, size_t dsize);
 void			ft_print_double_list(t_dnode *list, void (*fct_print)(void *));
 void			ft_remove_double_list(t_dnode **list, t_dnode *node);
